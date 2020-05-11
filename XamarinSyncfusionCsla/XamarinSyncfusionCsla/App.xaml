@@ -3,9 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:XamarinSyncfusionCsla.Converters"
              mc:Ignorable="d"
              x:Class="XamarinSyncfusionCsla.App">
     <Application.Resources>
+        <converters:BooleanToReverseConverter x:Key="BooleanToReverseConverter"/>
+
+        <Style TargetType="Button" Class="Primary">
+            <Setter Property="HeightRequest" Value="56"></Setter>
+            <Setter Property="Margin" Value="20,0"></Setter>
+        </Style>
 
     </Application.Resources>
 </Application>

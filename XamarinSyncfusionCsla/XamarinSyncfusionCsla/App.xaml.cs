@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Csla.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +12,11 @@ namespace XamarinSyncfusionCsla
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            CslaConfiguration.Configure().ContextManager(new Csla.Xaml.ApplicationContextManager());
+            var services = new ServiceCollection();
+            services.AddCsla();
+
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()
