@@ -39,8 +39,8 @@ namespace XamarinSyncfusionCsla.ViewModels
             BusinessRules.SuppressRuleChecking = true;
             base.AddBusinessRules();
 
-            //Email
             BusinessRules.AddRule(new Required(UsernameProperty));
+            //Email regex
             BusinessRules.AddRule(new RegExMatch(UsernameProperty, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", "Username is not a valid email.") { NullOption = RegExMatch.NullResultOptions.ReturnTrue });
             BusinessRules.AddRule(new Required(PasswordProperty));
         }
